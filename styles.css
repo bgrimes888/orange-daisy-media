@@ -1,0 +1,382 @@
+:root {
+  --bg: #f7f5f2;
+  --surface: #ffffff;
+  --text: #141414;
+  --muted: #6f6a64;
+  --accent: #d97757;
+  --accent-soft: #f1c4b2;
+  --line: #e8dfd8;
+  --max: 1120px;
+  --radius: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(calc(100% - 2rem), var(--max));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(14px);
+  background: rgba(247, 245, 242, 0.82);
+  border-bottom: 1px solid rgba(20, 20, 20, 0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.brand {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+nav a {
+  font-size: 0.95rem;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+.nav-button,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.nav-button,
+.button.primary {
+  background: var(--text);
+  color: #fff;
+}
+
+.nav-button:hover,
+.button.primary:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.button.secondary {
+  border-color: var(--line);
+  background: transparent;
+  color: var(--text);
+}
+
+.button.secondary:hover {
+  background: #fff;
+}
+
+.hero {
+  padding: 5.5rem 0 4rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.hero-copy,
+.hero-card,
+.service,
+.about-card,
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.hero-copy {
+  padding: 3.5rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(217, 119, 87, 0.12);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-copy p {
+  max-width: 38rem;
+  font-size: 1.08rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-bottom: 2.2rem;
+}
+
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.hero-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hero-meta strong {
+  font-size: 1.4rem;
+  letter-spacing: -0.03em;
+}
+
+.hero-meta span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.hero-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  background: linear-gradient(180deg, #fff 0%, #fcf7f4 100%);
+}
+
+.hero-visual {
+  aspect-ratio: 1 / 1.05;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at center, rgba(217, 119, 87, 0.95) 0 10%, #8d4a38 10.5% 13%, transparent 13.5%),
+    repeating-conic-gradient(from 0deg, transparent 0deg 16deg, rgba(20,20,20,0.95) 16deg 17.5deg, transparent 17.5deg 32deg),
+    radial-gradient(circle at center, #fff 0 58%, transparent 58.5%);
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 119, 87, 0.22);
+}
+
+.card-note {
+  padding-top: 1.4rem;
+}
+
+.card-note h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.45rem;
+}
+
+.card-note p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+section {
+  padding: 1rem 0 4rem;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+.section-head h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.section-head p {
+  color: var(--muted);
+  max-width: 36rem;
+  margin-bottom: 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.service {
+  padding: 2rem;
+}
+
+.service-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: rgba(217, 119, 87, 0.12);
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 1.3rem;
+}
+
+.service h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.55rem;
+}
+
+.service p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.about-grid,
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.about-card,
+.contact-card {
+  padding: 2rem;
+}
+
+.about-card p,
+.contact-card p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.contact-card a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.footer {
+  padding: 1.5rem 0 3rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .hero-grid,
+  .services-grid,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    padding: 2.2rem;
+  }
+
+  .header-inner,
+  .section-head,
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 3.5rem;
+  }
+
+  h1 {
+    font-size: 2.7rem;
+  }
+
+  .hero-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy,
+  .hero-card,
+  .service,
+  .about-card,
+  .contact-card {
+    border-radius: 20px;
+  }
+}
