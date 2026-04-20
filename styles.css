@@ -31,6 +31,20 @@ a {
   text-decoration: none;
 }
 
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+
 .container {
   width: min(calc(100% - 2rem), var(--max));
   margin: 0 auto;
@@ -53,6 +67,9 @@ a {
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.28em;
@@ -147,7 +164,10 @@ nav a:hover {
   text-transform: uppercase;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   margin-top: 0;
 }
 
@@ -200,7 +220,7 @@ h1 {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-height: 100%;
   background: linear-gradient(180deg, #fff 0%, #fcf7f4 100%);
 }
@@ -211,7 +231,7 @@ h1 {
   border: 1px solid var(--line);
   background:
     radial-gradient(circle at center, rgba(217, 119, 87, 0.95) 0 10%, #8d4a38 10.5% 13%, transparent 13.5%),
-    repeating-conic-gradient(from 0deg, transparent 0deg 16deg, rgba(20,20,20,0.95) 16deg 17.5deg, transparent 17.5deg 32deg),
+    repeating-conic-gradient(from 0deg, transparent 0deg 16deg, rgba(20, 20, 20, 0.95) 16deg 17.5deg, transparent 17.5deg 32deg),
     radial-gradient(circle at center, #fff 0 58%, transparent 58.5%);
   background-color: #fff;
   position: relative;
@@ -335,6 +355,7 @@ section {
 }
 
 @media (max-width: 900px) {
+
   .hero-grid,
   .services-grid,
   .about-grid,
